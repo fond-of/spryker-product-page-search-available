@@ -13,7 +13,7 @@ use Spryker\Client\Search\Dependency\Plugin\QueryInterface;
 /**
  * @method \FondOfSpryker\Client\ProductPageSearchAvailable\ProductPageSearchAvailableFactory getFactory()
  */
-class StyleKeyQueryExpanderPlugin extends AbstractPlugin implements QueryExpanderPluginInterface
+class AvailableQueryExpanderPlugin extends AbstractPlugin implements QueryExpanderPluginInterface
 {
     /**
      * @param \Spryker\Client\Search\Dependency\Plugin\QueryInterface $searchQuery

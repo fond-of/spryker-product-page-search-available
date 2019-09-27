@@ -22,7 +22,7 @@
   ],
   "require": {
     "php": ">=7.1",
-    "spryker/category-page-search": "~1.0.0",
+    "spryker/product-page-search": "~1.0.0",
     "spryker/locale": "~3.1.0",
     "spryker/availability": "~6.3.0"
   },
