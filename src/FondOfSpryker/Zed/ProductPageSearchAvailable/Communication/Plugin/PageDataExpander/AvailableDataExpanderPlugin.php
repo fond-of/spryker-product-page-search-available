@@ -29,7 +29,6 @@ class AvailableDataExpanderPlugin extends AbstractPlugin implements ProductPageD
             ->getAvailabilityFacade()
             ->getProductAbstractAvailability($productAbstractPageSearchTransfer->getIdProductAbstract(), $localeTransfer->getIdLocale());
 
-        $available = $productAbstractAvailabilityTransfer->getAvailability() > 0 ? true : false;
-        $productAbstractPageSearchTransfer->setAvailable($available);
+        $productAbstractPageSearchTransfer->setAvailable($productAbstractAvailabilityTransfer->getAvailability() > 0);
     }
 }

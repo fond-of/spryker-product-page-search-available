@@ -23,7 +23,7 @@ class AvailableQueryExpanderPlugin extends AbstractPlugin implements QueryExpand
      */
     public function expandQuery(QueryInterface $searchQuery, array $requestParameters = []): QueryInterface
     {
-        if (!array_key_exists(PageIndexMap::STYLE_KEY, $requestParameters)) {
+        if (!array_key_exists(PageIndexMap::AVAILABLE, $requestParameters)) {
             return $searchQuery;
         }
 
@@ -32,7 +32,7 @@ class AvailableQueryExpanderPlugin extends AbstractPlugin implements QueryExpand
         $matchQuery = $this->getFactory()
             ->createQueryBuilder()
             ->createMatchQuery()
-            ->setField(PageIndexMap::STYLE_KEY, $requestParameters[PageIndexMap::STYLE_KEY]);
+            ->setField(PageIndexMap::AVAILABLE, $requestParameters[PageIndexMap::AVAILABLE]);
 
         $boolQuery->addMust($matchQuery);
 

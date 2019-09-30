@@ -50,9 +50,7 @@ class AvailablePageMapExpanderPlugin extends AbstractPlugin implements ProductPa
             ->getAvailabilityFacade()
             ->getProductAbstractAvailability($productData['id_product_abstract'], $localeTransfer->getIdLocale());
 
-        $available = $productAbstractAvailabilityTransfer->getAvailability() > 0 ? true : false;
-
-        $pageMapTransfer->setAvailable($available);
-        $pageMapBuilder->addSearchResultData($pageMapTransfer, PageMapTransfer::AVAILABLE, $available);
+        $pageMapTransfer->setAvailable($productAbstractAvailabilityTransfer->getAvailability() > 0);
+        $pageMapBuilder->addSearchResultData($pageMapTransfer, PageMapTransfer::AVAILABLE, $productAbstractAvailabilityTransfer->getAvailability() > 0);
     }
 }
